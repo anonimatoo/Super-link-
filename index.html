@@ -1,0 +1,70 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON DOWNLOADS - Baixe Vídeos Facilmente</title>
+    <meta name="description" content="Baixe vídeos do YouTube, Instagram, Facebook, TikTok e Pinterest de forma rápida e fácil com o NEON DOWNLOADS. Interface futurista e downloads simulados.">
+    <meta name="keywords" content="download video, baixar video, youtube downloader, instagram downloader, tiktok downloader, neon, futurista">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "canvas-confetti": "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.module.mjs"
+      }
+    }
+    </script>
+</head>
+<body class="bg-black text-white font-['Orbitron',_sans-serif]">
+
+    <div id="background-grid"></div>
+
+    <div class="relative min-h-screen flex flex-col items-center justify-center p-4 z-10">
+        <header class="text-center mb-8">
+            <h1 class="neon-text text-5xl md:text-7xl font-bold" data-text="NEON DOWNLOADS">NEON DOWNLOADS</h1>
+        </header>
+
+        <main class="w-full max-w-2xl text-center">
+            <form id="download-form" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                <input 
+                    type="url" 
+                    id="url-input" 
+                    placeholder="Cole o link do vídeo aqui..."
+                    class="w-full sm:w-3/4 bg-gray-900/50 border-2 border-cyan-400 focus:border-fuchsia-500 text-white placeholder-gray-400 rounded-lg px-4 py-3 text-center text-lg outline-none transition-all duration-300 shadow-[0_0_10px_rgba(0,255,255,0.5)] focus:shadow-[0_0_20px_rgba(255,0,255,0.7)]"
+                    required>
+                <button 
+                    type="submit" 
+                    id="download-btn"
+                    class="glow-button w-full sm:w-auto font-bold text-lg px-8 py-3 rounded-lg transition-all duration-300">
+                    Baixar
+                </button>
+            </form>
+
+            <div id="message-container" class="min-h-[2rem] text-lg font-semibold mb-8"></div>
+
+            <div class="supported-platforms mb-8">
+                <p class="text-gray-400 mb-4">Plataformas Suportadas:</p>
+                <div class="flex items-center justify-center gap-4 md:gap-6">
+                    <img src="youtube-icon.png" alt="YouTube" class="h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="instagram-icon.png" alt="Instagram" class="h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="facebook-icon.png" alt="Facebook" class="h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="tiktok-icon.png" alt="TikTok" class="h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="pinterest-icon.png" alt="Pinterest" class="h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="absolute bottom-0 left-0 w-full p-4 text-center">
+            <p class="text-xs text-gray-500">Este site é apenas para fins educacionais. Não hospedamos nem armazenamos nenhum conteúdo. Respeite os direitos autorais.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js" type="module"></script>
+</body>
+</html>
