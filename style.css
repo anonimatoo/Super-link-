@@ -1,0 +1,114 @@
+:root {
+    --neon-cyan: #00ffff;
+    --neon-fuchsia: #ff00ff;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --shadow-cyan: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan), 0 0 80px var(--neon-cyan);
+    --shadow-fuchsia: 0 0 5px var(--neon-fuchsia), 0 0 10px var(--neon-fuchsia), 0 0 20px var(--neon-fuchsia);
+}
+
+body {
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+#background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: 
+        linear-gradient(to right, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+    animation: background-pan 120s linear infinite;
+}
+
+@keyframes background-pan {
+    from { background-position: 0 0; }
+    to { background-position: -600px -600px; }
+}
+
+
+.neon-text {
+    position: relative;
+    color: var(--text-color);
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 5px #fff,
+        0 0 10px var(--neon-cyan),
+        0 0 20px var(--neon-cyan),
+        0 0 30px var(--neon-cyan),
+        0 0 40px var(--neon-cyan);
+    animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 10px var(--neon-cyan),
+            0 0 20px var(--neon-cyan),
+            0 0 30px var(--neon-cyan),
+            0 0 40px var(--neon-cyan);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.glow-button {
+    background: linear-gradient(45deg, var(--neon-fuchsia), var(--neon-cyan));
+    color: var(--text-color);
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.7);
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.glow-button:hover, .glow-button:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1), 0 0 15px rgba(255, 0, 255, 1), inset 0 0 5px rgba(255,255,255,0.5);
+    transform: scale(1.05);
+}
+
+.message {
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    animation: slide-in 0.5s ease-out;
+    display: inline-block;
+}
+
+.message-success {
+    background-color: rgba(0, 255, 127, 0.15);
+    border: 1px solid rgba(0, 255, 127, 0.5);
+    color: #00ff7f;
+    text-shadow: 0 0 5px #00ff7f;
+}
+
+.message-error {
+    background-color: rgba(255, 69, 0, 0.15);
+    border: 1px solid rgba(255, 69, 0, 0.5);
+    color: #ff4500;
+    text-shadow: 0 0 5px #ff4500;
+}
+
+.message-info {
+    background-color: rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
